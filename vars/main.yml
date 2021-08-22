@@ -1,0 +1,9 @@
+---
+# vars file for argo
+argo_platform: '{{ argo_os }}-{{ argo_arch }}'
+argo_url: '{{ argo_mirror }}/v{{ argo_ver }}/argo-{{ argo_platform }}.gz'
+argo_checksum: '{{ argo_checksums[argo_ver][argo_platform] }}'
+
+argo_exe: '{{ argo_install_dir }}/argo-{{ argo_platform }}-{{ argo_ver }}'
+argo_exe_gz: '{{ argo_exe }}.gz'
+argo_link: '{{ argo_install_dir }}/argo'
