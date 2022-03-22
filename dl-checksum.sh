@@ -11,11 +11,12 @@ dl()
     local ver=$1
     local os=$2
     local arch=$3
+    local suffix=${4:-gz}
     local platform="$os-$arch"
-    local url="${MIRROR}/v${ver}/${APP}-${platform}.gz.sha256"
+    local url="${MIRROR}/v${ver}/${APP}-${platform}.${suffix}.sha256"
 
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform $(curl -qsSL $url)
+    printf "    %s: sha256:%s\n" $platform $(curl -sSLf $url)
 }
 
 dlver () {
@@ -26,7 +27,7 @@ dlver () {
     dl $ver linux arm64
     dl $ver linux ppc64le
     dl $ver linux s390x
-    dl $ver windows amd64
+    dl $ver windows amd64 exe.gz
 }
 
-dlver ${1:-3.2.8}
+dlver ${1:-3.3.1}

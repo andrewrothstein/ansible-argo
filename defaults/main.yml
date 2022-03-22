@@ -1,6 +1,6 @@
 ---
 # defaults file for argo
-argo_ver: 3.2.8
+argo_ver: 3.3.1
 argo_mirror: https://github.com/argoproj/argo-workflows/releases/download
 argo_os: linux
 argo_arch: amd64
@@ -177,36 +177,40 @@ argo_checksums:
     windows-amd64: sha256:61f68bd6df5fac14f3913b01f51613e474099427180a23974f0c6271fd6bbfd4
   '3.2.9':
     # https://github.com/argoproj/argo-workflows/releases/download/v3.2.9/argo-darwin-amd64.gz.sha256
-    darwin-amd64: f66c8becaa804fcbee39c0744cc8e0c800530f41bedc8ae647b8f532dea55999
+    darwin-amd64: sha256:f66c8becaa804fcbee39c0744cc8e0c800530f41bedc8ae647b8f532dea55999
     # https://github.com/argoproj/argo-workflows/releases/download/v3.2.9/argo-linux-amd64.gz.sha256
-    linux-amd64: c41548053388c3de2cb44d73abff277ce50880acf33b5159d56c8b5434ff8184
+    linux-amd64: sha256:c41548053388c3de2cb44d73abff277ce50880acf33b5159d56c8b5434ff8184
     # https://github.com/argoproj/argo-workflows/releases/download/v3.2.9/argo-linux-arm64.gz.sha256
-    linux-arm64: 6b8ca053f61f3f292e9cf8f94f7827d0cd564b236a72f8b68baa1583d4e22d3e
+    linux-arm64: sha256:6b8ca053f61f3f292e9cf8f94f7827d0cd564b236a72f8b68baa1583d4e22d3e
     # https://github.com/argoproj/argo-workflows/releases/download/v3.2.9/argo-linux-ppc64le.gz.sha256
-    linux-ppc64le: fbb3f370cbb97b7b8f411bcd69b7d13fb59cb388dfd1817d08d96f0d4ea841d6
+    linux-ppc64le: sha256:fbb3f370cbb97b7b8f411bcd69b7d13fb59cb388dfd1817d08d96f0d4ea841d6
     # https://github.com/argoproj/argo-workflows/releases/download/v3.2.9/argo-linux-s390x.gz.sha256
-    linux-s390x: 7613d1f5006da9f6eff0b03d4d22a0deb8df5a3cc8c9ce9a95ef410af2ce68ac
+    linux-s390x: sha256:7613d1f5006da9f6eff0b03d4d22a0deb8df5a3cc8c9ce9a95ef410af2ce68ac
     # https://github.com/argoproj/argo-workflows/releases/download/v3.2.9/argo-windows-amd64.gz.sha256
-    windows-amd64: d476d118436d0f304895f36e0a6ce142404e0b7f2e81544af152f51faa87ae65
+    windows-amd64: sha256:d476d118436d0f304895f36e0a6ce142404e0b7f2e81544af152f51faa87ae65
   '3.3.0':
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.0/argo-darwin-amd64.gz.sha256
-    darwin-amd64: a986409e276fe2b47037197f57815dadf4852436772d7a88948ce765ad7f71aa
+    darwin-amd64: sha256:a986409e276fe2b47037197f57815dadf4852436772d7a88948ce765ad7f71aa
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.0/argo-linux-amd64.gz.sha256
-    linux-amd64: c376ce9581e495c01587d950e855a218d22d1c99ca82d614c4ec0d66e44669b5
+    linux-amd64: sha256:c376ce9581e495c01587d950e855a218d22d1c99ca82d614c4ec0d66e44669b5
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.0/argo-linux-arm64.gz.sha256
-    linux-arm64: 1169d95decf4c06796ea5c7bd70c28ca068fd871cbf1a8c8091c96f8475b6be3
+    linux-arm64: sha256:1169d95decf4c06796ea5c7bd70c28ca068fd871cbf1a8c8091c96f8475b6be3
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.0/argo-linux-ppc64le.gz.sha256
-    linux-ppc64le: ec8d3d7675ba488816677cdb5eccddc4eecee4835796b2af791bf5ee283e6129
+    linux-ppc64le: sha256:ec8d3d7675ba488816677cdb5eccddc4eecee4835796b2af791bf5ee283e6129
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.0/argo-linux-s390x.gz.sha256
-    linux-s390x: e03105e0b34d2324b7fccf766324998b68993fd1120e43f335161f5b290d748d
+    linux-s390x: sha256:e03105e0b34d2324b7fccf766324998b68993fd1120e43f335161f5b290d748d
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.3.0/argo-windows-amd64.exe.gz.sha256
+    windows-amd64: sha256:bb5f0fa7769750cdeb0a301a2e518cbc093d20e3e59efb950d5cde1ff30bf283
   '3.3.1':
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.1/argo-darwin-amd64.gz.sha256
-    darwin-amd64: aa65ae2e3fd0cc9d2ccf2679f906ed4d33052ed7be63fff7176612f4518b0231
+    darwin-amd64: sha256:aa65ae2e3fd0cc9d2ccf2679f906ed4d33052ed7be63fff7176612f4518b0231
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.1/argo-linux-amd64.gz.sha256
-    linux-amd64: 23b029c553379bc4a110ad65d1632d7e53deabcb9aee9af5bfc1078b6c20c4cf
+    linux-amd64: sha256:23b029c553379bc4a110ad65d1632d7e53deabcb9aee9af5bfc1078b6c20c4cf
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.1/argo-linux-arm64.gz.sha256
-    linux-arm64: 778244488338288f39cea6ef2fe14122eb6d2729ee503c3f4192aa0072eaabca
+    linux-arm64: sha256:778244488338288f39cea6ef2fe14122eb6d2729ee503c3f4192aa0072eaabca
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.1/argo-linux-ppc64le.gz.sha256
-    linux-ppc64le: 907886257af28b5c92bc969e578766bf480071561bb2939214cb4b8178daea2f
+    linux-ppc64le: sha256:907886257af28b5c92bc969e578766bf480071561bb2939214cb4b8178daea2f
     # https://github.com/argoproj/argo-workflows/releases/download/v3.3.1/argo-linux-s390x.gz.sha256
-    linux-s390x: e5f1906e688211ed1379ad964d7c39a91be044334439a9be800908c6a32fc4a7
+    linux-s390x: sha256:e5f1906e688211ed1379ad964d7c39a91be044334439a9be800908c6a32fc4a7
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.3.1/argo-windows-amd64.exe.gz.sha256
+    windows-amd64: sha256:de42acee5f0056152d80a9d1b367e3356de167aa06d08c3e43532ba6f40d53e6
