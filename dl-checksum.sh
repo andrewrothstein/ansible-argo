@@ -30,4 +30,4 @@ dlver () {
     dl $ver windows amd64 exe.gz
 }
 
-dlver ${1:-3.3.8}
+dlver ${1:-3.4.0}
