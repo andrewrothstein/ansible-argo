@@ -23,6 +23,7 @@ dlver () {
     local ver=$1
     printf "  '%s':\n" $ver
     dl $ver darwin amd64
+    dl $ver darwin arm64
     dl $ver linux amd64
     dl $ver linux arm64
     dl $ver linux ppc64le
@@ -30,4 +31,4 @@ dlver () {
     dl $ver windows amd64 exe.gz
 }
 
-dlver ${1:-3.4.0}
+dlver ${1:-3.4.1}
