@@ -2,33 +2,42 @@
 set -e
 DIR=~/Downloads
 MIRROR=https://github.com/argoproj/argo-workflows/releases/download
-APP=argo
 
-# https://github.com/argoproj/argo-workflows/releases/download/v3.1.8/argo-linux-amd64.gz
+# https://github.com/argoproj/argo-workflows/releases/download/v3.4.4/argo-linux-amd64.gz
+# https://github.com/argoproj/argo-workflows/releases/download/v3.4.4/argo-workflows-cli-checksums.txt
 
 dl()
 {
-    local ver=$1
-    local os=$2
-    local arch=$3
-    local suffix=${4:-gz}
+    local lsums=$1
+    local ver=$2
+    local os=$3
+    local arch=$4
+    local suffix=${5:-gz}
     local platform="$os-$arch"
-    local url="${MIRROR}/v${ver}/${APP}-${platform}.${suffix}.sha256"
 
+    local exe="argo-${platform}.${suffix}"
+    local url="${MIRROR}/v${ver}/${exe}"
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform $(curl -sSLf $url)
+    printf "    %s: sha256:%s\n" $platform $(grep "${exe}" "${lsums}" | awk '{ print $1 }')
 }
 
 dlver () {
     local ver=$1
+    local lsums="${DIR}/argo-workflows-${ver}-cli-checksums.txt"
+    local rsums="${MIRROR}/v${ver}/argo-workflows-cli-checksums.txt"
+    if [ ! -e "${csums}" ];
+    then
+        curl -sSLf -o "${lsums}" "${rsums}"
+    fi
+    printf "  # %s\n" $rsums
     printf "  '%s':\n" $ver
-    dl $ver darwin amd64
-    dl $ver darwin arm64
-    dl $ver linux amd64
-    dl $ver linux arm64
-    dl $ver linux ppc64le
-    dl $ver linux s390x
-    dl $ver windows amd64 exe.gz
+    dl $lsums $ver darwin amd64
+    dl $lsums $ver darwin arm64
+    dl $lsums $ver linux amd64
+    dl $lsums $ver linux arm64
+    dl $lsums $ver linux ppc64le
+    dl $lsums $ver linux s390x
+    dl $lsums $ver windows amd64 exe.gz
 }
 
-dlver ${1:-3.4.3}
+dlver ${1:-3.4.4}
