@@ -1,10 +1,14 @@
 ---
-- hosts: all
-  roles:
-  - role: '{{ playbook_dir }}'
+- name: Testing andrewrothstein.argo
+  hosts: all
   tasks:
-  - command: /usr/local/bin/argo version
-    register: argo_test_output
-  - name: argo version
-    debug:
-      msg: '{{ argo_test_output.stdout }}'
+    - name: Installing andrewrothstein.argo
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'argo version'
+      ansible.builtin.command: /usr/local/bin/argo version
+      changed_when: false
+      register: argo_test_output
+    - name: Output from 'argo version'
+      ansible.builtin.debug:
+        msg: '{{ argo_test_output.stdout }}'
