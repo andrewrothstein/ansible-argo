@@ -1,6 +1,6 @@
 ---
 # defaults file for argo
-argo_ver: 3.5.6
+argo_ver: 3.5.7
 argo_mirror: https://github.com/argoproj/argo-workflows/releases/download
 argo_arch_map:
   aarch64: arm64
@@ -602,3 +602,19 @@ argo_checksums:
     linux-s390x: sha256:6161df7f3ab408de31f1dd0907993fdf614109def876dcf25ef478675133cc2c
     # https://github.com/argoproj/argo-workflows/releases/download/v3.5.6/argo-windows-amd64.exe.gz
     windows-amd64: sha256:b2dab96a91a78f1661f8d9008f0527af39f64597fa0353a82c817d7a22cc2e2a
+  # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-workflows-cli-checksums.txt
+  '3.5.7':
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-darwin-amd64.gz
+    darwin-amd64: sha256:30b54c3c5b1ac4c9e625791607990be609468d5bafd977be1302143b0701bc83
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-darwin-arm64.gz
+    darwin-arm64: sha256:7f78a080e06ba80b879336e20cf92b00f0e7a4f38b4040296c958476ac6840f6
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-linux-amd64.gz
+    linux-amd64: sha256:9ae18d9831e05fbf2b1072dbdb00333daebf97848cc1e72aa76ddfa4cefcef3d
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-linux-arm64.gz
+    linux-arm64: sha256:acebb498ebcc7318526cc8034101b1575d68db184e3001d565d1beb4b418d3c6
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-linux-ppc64le.gz
+    linux-ppc64le: sha256:b58268737e87b316f037c260b2076bddcf268cde172161d2269c7dfb464c15d7
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-linux-s390x.gz
+    linux-s390x: sha256:17bc5fecd1b6c024056f3f84f5e1cbf062d609acc6fa3015f4bce61fcbfb15b7
+    # https://github.com/argoproj/argo-workflows/releases/download/v3.5.7/argo-windows-amd64.exe.gz
+    windows-amd64: sha256:1b4413ae1ee83a78fdc6c09d8f7de275e5ce269310bceaecf9343d0ce4b17e2f
