@@ -40,4 +40,4 @@ dlver () {
     dl $lsums $ver windows amd64 exe.gz
 }
 
-dlver ${1:-3.5.9}
+dlver ${1:-3.5.10}
