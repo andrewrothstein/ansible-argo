@@ -40,4 +40,12 @@ dlver () {
     dl $lsums $ver windows amd64 exe.gz
 }
 
-dlver ${1:-3.6.4}
+dlver 3.6.5
+dlver 3.6.6
+dlver 3.6.7
+dlver 3.6.9
+dlver 3.6.10
+dlver 3.6.11
+dlver 3.7.0
+dlver 3.7.1
+dlver ${1:-3.7.2}
