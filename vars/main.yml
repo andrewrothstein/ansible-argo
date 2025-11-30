@@ -1,7 +1,7 @@
 ---
 # vars file for argo
-argo_os: '{{ ansible_system | lower }}'
-argo_arch: '{{ argo_arch_map[ansible_architecture] }}'
+argo_os: '{{ ansible_facts["system"] | lower }}'
+argo_arch: '{{ argo_arch_map[ansible_facts["architecture"]] }}'
 argo_platform: '{{ argo_os }}-{{ argo_arch }}'
 argo_url: '{{ argo_mirror }}/v{{ argo_ver }}/argo-{{ argo_platform }}.gz'
 argo_checksum: '{{ argo_checksums[argo_ver][argo_platform] }}'
