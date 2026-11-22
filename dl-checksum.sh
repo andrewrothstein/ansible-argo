@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 set -e
-DIR=~/Downloads
+DIR=$(mktemp -d)
+trap 'rm -rf "$DIR"' EXIT
 MIRROR=https://github.com/argoproj/argo-workflows/releases/download
 
 # https://github.com/argoproj/argo-workflows/releases/download/v3.4.4/argo-linux-amd64.gz
@@ -17,20 +18,24 @@ dl()
 
     local exe="argo-${platform}.${suffix}"
     local url="${MIRROR}/v${ver}/${exe}"
-    printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform $(grep "${exe}" "${lsums}" | awk '{ print $1 }')
+    local sum
+    sum=$(awk -v e="$exe" '$2 == e || $2 == "*" e {print $1}' "$lsums")
+    if ! printf '%s' "$sum" | grep -Eq '^[0-9a-f]{64}$'
+    then
+        echo "bad or missing checksum for $exe: '$sum'" >&2
+        exit 1
+    fi
+    printf "    # %s\n" "$url"
+    printf "    %s: sha256:%s\n" "$platform" "$sum"
 }
 
 dlver () {
     local ver=$1
     local lsums="${DIR}/argo-workflows-${ver}-cli-checksums.txt"
     local rsums="${MIRROR}/v${ver}/argo-workflows-cli-checksums.txt"
-    if [ ! -e "${csums}" ];
-    then
-        curl -sSLf -o "${lsums}" "${rsums}"
-    fi
-    printf "  # %s\n" $rsums
-    printf "  '%s':\n" $ver
+    curl -fsSL --proto '=https' --tlsv1.2 -o "${lsums}" "${rsums}"
+    printf "  # %s\n" "$rsums"
+    printf "  '%s':\n" "$ver"
     dl $lsums $ver darwin amd64
     dl $lsums $ver darwin arm64
     dl $lsums $ver linux amd64
@@ -40,4 +45,4 @@ dlver () {
     dl $lsums $ver windows amd64 exe.gz
 }
 
-dlver ${1:-4.0.4}
+dlver ${1:-4.1.6}
